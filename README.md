@@ -9,7 +9,7 @@ O Doge Dogs é uma plataforma de doação ficticia com o objetivo de espalhar fe
 - HTML
 - CSS
 - Google Fonts API
-- 
+
 ## Em Andamento 🚧
 
 Este projeto ainda está em andamento. A implementação de JavaScript está planejada para melhorar a interatividade e funcionalidades da plataforma.
