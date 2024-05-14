@@ -1,38 +1,45 @@
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos gerais */
 body {
     font-family: "Archivo", sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
+/* Container inicial */
 .container-init {
     background-color: #d7e9ff;
-    padding: 40px;
+    padding: 2.5rem;
 }
 
 .section-initial {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 950px;
-    gap: 80px;
+    max-width: 59.375rem;
+    gap: 5rem;
 }
 
 .info-container {
     display: grid;
     align-content: start;
-    gap: 27px;
+    gap: 1.6875rem;
 }
 
 .info-container h3 {
-    font-size: 27px;
+    font-size: 1.6875rem;
 }
 
 .info-container p {
-    font-size: 16px;
+    font-size: 1rem;
     max-width: 40ch;
     line-height: 1.4;
 }
@@ -45,62 +52,194 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .dog-house {
-    max-width: 350px;
+    max-width: 21.875rem;
+    justify-self: end;
 }
 
+/* Botão de doação */
 .donation-button {
     background-color: #417dc7;
     border: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     font-weight: 600;
-    color: #ffff;
+    color: #fff;
     text-transform: uppercase;
-    font-size: 13px;
-    padding: 15px 25px;
+    font-size: 0.8125rem;
+    padding: 0.9375rem 1.5625rem;
     place-self: start;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     transition: background-color 0.3s;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0.4375rem 1.8125rem 0px;
 }
 
-.donation-button:hover{
+.donation-button:hover {
     background-color: #276cc0;
 }
 
-.dogs-list img {
-    max-width: 400px;
-    max-height: 400px;
-    background-color: #d7e9ff;
-    padding: 20px 13px;
-    border-radius: 10px;
+/* Galeria de trabalhos */
+.work-gallery {
+    padding: 2.5rem;
+    max-width: 59.375rem;
+    margin: 0 auto;
 }
 
-.js .js-tab-menu-ani li {
+.work-gallery h2 {
+    font-size: 1.875rem;
+    text-align: center;
+    color: #417dc7;
+}
+
+.work-love {
+    text-align: center;
+    margin: 0.9375rem 0;
+    font-size: 1.0625rem;
+}
+
+/* Lista de imagens e informações */
+.imgs-infos {
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* Lista de cachorros */
+.dogs-list {
+    height: 20rem;
+    overflow-y: scroll;
+    max-width: 13.75rem;
+}
+
+.dogs-list::-webkit-scrollbar {
+    width: 1.25rem;
+}
+
+.dogs-list::-webkit-scrollbar-thumb {
+    background-color: #d7e9ff;
+    border-radius: 0.625rem;
+    border-left: 0.25rem solid #fff;
+    border-right: 0.25rem solid #fff;
+}
+
+.dogs-list img {
+    max-width: 18.75rem;
+    max-height: 18.75rem;
+    background-color: #d7e9ff;
+    padding: 1.25rem 0.8125rem;
+    border-radius: 0.625rem;
+    margin: 0.1875rem 0;
+}
+
+/* Informações de texto */
+.texto-infos {
+    list-style: none;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    gap: 1.25rem;
+}
+
+.texto-infos p {
+    line-height: 1.24;
+}
+
+/* Esconder informações com JS */
+.js .texto-infos li {
     display: none;
 }
 
-.js .js-tab-menu-ani li.ativo{
-    display: block;
+.js .dogs-list li:hover {
+    cursor: pointer;
 }
 
+.js .texto-infos li.ativo {
+    display: block !important;
+    animation: show 0.9s forwards;
+}
 
-@media (max-width: 700px) {
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -50, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: #d7e9ff;
+    padding: 0.9375rem 2.5rem;
+}
+
+.imgs-footer {
+    display: flex;
+    gap: 0.8125rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.imgs-footer img {
+    width: 1.125rem;
+}
+
+/* Media queries */
+@media (max-width: 50rem) {
+    .dogs-list {
+        height: 20rem;
+        overflow-y: scroll;
+        max-width: 9.375rem;
+    }
+
+    .dogs-list img {
+        max-width: 8.125rem;
+        background-color: #d7e9ff;
+        padding: 1.25rem 0.8125rem;
+        border-radius: 0.625rem;
+        margin: 0.1875rem 0;
+    }
+}
+
+@media (max-width: 43.75rem) {
     .section-initial {
         grid-template-columns: 1fr;
         text-align: center;
         justify-items: center;
     }
 
+    .dog-house {
+        justify-self: center;
+    }
+
     .info-container {
-        gap: 20px;
+        gap: 1.25rem;
         place-items: center;
     }
 
     .donation-button {
         place-self: center;
+    }
+
+    .imgs-infos {
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+    }
+
+    .dogs-list {
+        display: flex;
+        gap: 1.25rem;
+        height: 14.375rem;
+        overflow-x: scroll;
+        max-width: 13.75rem;
+        margin: 0 auto;
+    }
+
+    .texto-infos p {
+        font-size: 0.9375rem;
     }
 }
